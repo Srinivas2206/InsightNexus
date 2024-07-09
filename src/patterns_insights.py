@@ -13,6 +13,13 @@ from mlxtend.frequent_patterns import fpgrowth, association_rules
 
 
 def descriptive_statistics(df):
+    """
+       This func descriptive_statistics calculates and displays descriptive statistics for a DataFrame using Streamlit.
+       It includes measures of central tendency(mean,median,mode), dispersion, and distribution.
+
+       Parameters:
+       df (pandas DataFrame): The DataFrame containing the data to analyze.
+       """
     st.write("## Descriptive Statistics")
 
     st.write("### Central Tendency")
@@ -39,6 +46,12 @@ def descriptive_statistics(df):
 
 
 def correlation_analysis(df):
+    """   This function performs a correlation analysis on the DataFrame and visualizes
+    the correlation matrix using a heatmap in Streamlit.
+    parameter
+    ----------
+    df (pandas dataFrame)
+    """
     st.write("## Correlation Analysis")
     corr_matrix = df.corr()
     fig, ax = plt.subplots()
@@ -47,6 +60,15 @@ def correlation_analysis(df):
 
 
 def comparative_analysis(df):
+    """This function performs a comparative analysis on the DataFrame by generating
+    box plots for each combination of categorical and numerical columns, and
+    conducting ANOVA(analysis of variance) tests.
+
+    Parameters
+    ----------
+    df (pandas.DataFrame): The DataFrame containing the data to analyze.
+    """
+    
     st.write("## Comparative Analysis")
 
     categorical_columns = df.select_dtypes(include=['category', 'object']).columns
@@ -66,6 +88,12 @@ def comparative_analysis(df):
 
 
 def regression_analysis(df):
+    """ This function performs a regression analysis on the DataFrame using a linear regression model.
+    It trains the model, makes predictions, and displays the coefficients, intercept, and mean squared error.
+    parameter
+    ---------
+    df : pandas DataFrame
+    """
     st.write("## Regression Analysis")
 
     target = 'CompletionRate'  # Change this to your target variable
@@ -88,6 +116,12 @@ def regression_analysis(df):
 
 
 def outlier_detection(df):
+    """This function detects outliers in the numerical columns of the DataFrame using the Z-score method.
+    It counts and displays the number of outliers detected.
+    parameter:
+    ---------
+    df pandas.Dataframe
+    """
     st.write("## Outlier Detection")
 
     numerical_columns = df.select_dtypes(include=['number']).columns
@@ -98,6 +132,11 @@ def outlier_detection(df):
 
 
 def kmeans_clustering(df):
+    """This function performs K-means clustering on the numerical columns of the DataFrame.
+    It scales the data, applies K-means clustering, and visualizes the clusters using pair plots.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing the data to analyze."""
     st.write("## Segment Analysis: K-Means Clustering")
 
     scaler = StandardScaler()
@@ -114,6 +153,11 @@ def kmeans_clustering(df):
 
 
 def association_rules_analysis(df):
+    """ This function performs association rules analysis on the categorical columns of the DataFrame.
+    It uses the FP-growth algorithm to find frequent itemsets and then derives association rules.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing the data to analyze."""
     st.write("## Association Rules")
 
     # Assuming binary data for market basket analysis
