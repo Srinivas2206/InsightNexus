@@ -16,8 +16,7 @@ This project aims to develop an AI-based solution that can effectively represent
 
 ## Usage
 
-Upload a CSV file using the Streamlit interface.
-Navigate through different options to visualize data, perform clustering, classification, regression, and generate insights.
+In the streamlit inteface, Navigate through different options to visualize data, train model,perform classification, regression,identify patterns and generate insights.
 
 ## Dependencies
 
