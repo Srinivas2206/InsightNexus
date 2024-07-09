@@ -12,6 +12,21 @@ from data_preprocessing import split_and_scale_data, preprocess_data
 
 
 def train_and_save_models(df):
+    """ this function trains various machine learning models like
+    1.logistic regression
+    2.adaboost classifier
+    3.decision tree classifier
+    4.gradient boost classifier
+    5. SVC
+    6.random forest classifier
+    7.XG boost classifier
+    8.K-neighbour classifier
+    These trained models are further saved in a file.
+    parameter:
+    ---------
+    df (pandas.DataFrame)
+
+    """
     X_train, X_test, y_train, y_test = split_and_scale_data(df)
 
     models = {
