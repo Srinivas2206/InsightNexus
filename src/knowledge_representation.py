@@ -6,6 +6,12 @@ import streamlit as st
 
 
 def visualize_data(df):
+    """ This function visualizes data from a DataFrame using Streamlit.
+    It generates count plots, pie charts, box plots, and additional bar plots and KDE plots.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing the data to visualize.
+    """
     st.write("# Data Visualization")
     st.write("## Count Plots")
     # List of columns for count plots
@@ -24,20 +30,6 @@ def visualize_data(df):
         fig = px.pie(df, names=column, title=f"Pie Chart of {column}",
                      color_discrete_sequence=px.colors.qualitative.Set3)
         st.plotly_chart(fig)
-    ''' 
-    st.write("## Scatter Plots")
-
-    # List of pairs of columns for scatter plots
-    scatter_plot_pairs = [
-        ("TimeSpentOnCourse", "CompletionRate"),
-        ("NumberOfVideosWatched", "QuizScores"),
-        ("NumberOfQuizzesTaken", "QuizScores")
-    ]
-
-    for x_col, y_col in scatter_plot_pairs:
-        st.write(f"### {x_col} vs {y_col}")
-        fig = px.scatter(df, x=x_col, y=y_col, color="CourseCompletion", title=f"Scatter Plot of {x_col} vs {y_col}")
-        st.plotly_chart(fig)'''
 
     st.write("## Box Plots")
 
