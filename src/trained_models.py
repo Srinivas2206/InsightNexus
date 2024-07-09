@@ -6,6 +6,12 @@ import plotly.express as px
 
 
 def display_trained_models(df):
+    """ This function displays the performance of trained machine learning models on a Streamlit app.
+    It loads each model, makes predictions on the test data, and displays the accuracy, classification report,
+    and confusion matrix for each model.
+    parameter:
+    df(pandas.DataFrame)
+    """
     st.write("## Trained Models")
 
     X_train, X_test, y_train, y_test = split_and_scale_data(df)
