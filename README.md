@@ -34,7 +34,7 @@ This project is licensed under the MIT License.
    - Create directories and files as shown above.
    
 2. **Add your dataset:**
-   - Place your dataset in the `data/` directory.
+   - Place the `online_course_engagement.csv` dataset in the `data/` directory.
 
 3. **Install required libraries:**
    ```bash
