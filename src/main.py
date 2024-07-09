@@ -8,6 +8,7 @@ from trained_models import display_trained_models
 from train_models import train_and_save_models
 
 def data_description(df):
+    """this function displays the data """
     st.write("# Data Description")
     st.write("""
     ### Description:
